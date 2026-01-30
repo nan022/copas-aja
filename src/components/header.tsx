@@ -282,14 +282,12 @@ export default function Header() {
 
             {/* Action Buttons */}
             <div className="space-y-2">
-              <Button variant="outline" className="w-full border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20">
-                <User className="w-4 h-4 mr-2" />
-                Login
-              </Button>
-              <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white">
-                <Upload className="w-4 h-4 mr-2" />
-                Upload Prompt
-              </Button>
+                <Link href={"/login"}>
+                    <Button variant="outline" className="w-full border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20">
+                        <User className="w-4 h-4 " />
+                        Login
+                    </Button>
+                </Link>
             </div>
           </div>
         </div>
