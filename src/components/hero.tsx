@@ -4,7 +4,7 @@ import { Sparkles, Rocket, Zap, TrendingUp } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-gray-950 dark:to-gray-900">
+    <section className="relative flex items-center justify-center overflow-hidden bg-linear-to-br from-indigo-50 to-violet-50 dark:from-gray-950 dark:to-gray-900">
       {/* Grid Pattern Background - subtle & professional */}
       <div className="absolute inset-0 opacity-15">
         <GridPattern 
@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Gradient Overlay for depth */}
       <div className="absolute inset-0 bg-linear-to-br from-indigo-600/5 via-transparent to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content Section - Focused on Prompt Marketplace */}
           <div className="space-y-8">
