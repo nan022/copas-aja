@@ -135,9 +135,7 @@ export default function PromptShowcase() {
                 className="group overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-900"
               >
                 {/* Image Preview */}
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                  
+                <div className="relative h-56 overflow-hidden bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
                   <div className="absolute inset-0">
                     <img
                       src={item.resultPreview}
@@ -170,7 +168,7 @@ export default function PromptShowcase() {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0`}>
+                    <div className={`w-10 h-10 rounded-lg bg-linear-to-br ${item.color} flex items-center justify-center flex-shrink-0`}>
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="font-bold text-lg text-gray-900 dark:text-white">
