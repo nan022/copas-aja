@@ -44,8 +44,8 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-linear-to-br from-indigo-600/5 via-transparent to-transparent" />
         <div className="relative">
 
-            <Card className="w-full max-w-md border border-gray-200 dark:border-gray-800 shadow-2xl">
-                <div className="p-8">
+            <Card className="w-full max-w-md border border-gray-200 dark:border-gray-800 dark:bg-gray-900 shadow-2xl">
+                <div className="px-8 py-2">
                 {/* Logo Section */}
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center space-x-2 mb-4">
@@ -119,7 +119,7 @@ export default function LoginPage() {
                     <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all"
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all cursor-pointer"
                     >
                     {isLoading ? (
                         <span className="flex items-center justify-center">
@@ -127,7 +127,7 @@ export default function LoginPage() {
                         Memproses...
                         </span>
                     ) : (
-                        "Masuk ke Akun"
+                        "Masuk"
                     )}
                     </Button>
                 </form>
@@ -138,7 +138,7 @@ export default function LoginPage() {
                     <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
                     </div>
                     <div className="relative flex justify-center text-sm">
-                    <span className="px-4 bg-white dark:bg-gray-950 text-gray-500 dark:text-gray-400">
+                    <span className="px-4 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">
                         atau lanjutkan dengan
                     </span>
                     </div>

@@ -62,7 +62,7 @@ export default function Header() {
                   <NavigationMenuTrigger className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 data-[state=open]:text-indigo-600 dark:data-[state=open]:text-indigo-400 bg-transparent">
                     Kategori
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="min-w-125 p-4 border-gray-200 dark:border-gray-800 shadow-xl rounded-xl z-9999 mt-2">
+                  <NavigationMenuContent className="min-w-125 p-4 border-gray-200 dark:border-gray-800 dark:bg-gray-900 shadow-xl rounded-xl z-9999 mt-2">
                     <div className="grid grid-cols-2 gap-2">
                       {/* Kolom 1 */}
                       <div className="space-y-1">
@@ -132,7 +132,7 @@ export default function Header() {
                               Edukasi
                             </div>
                             <div className="text-xs text-gray-500 dark:text-gray-400">
-                              Materi, presentasi, pembelajaran
+                              Materi, tugas, skripsi
                             </div>
                           </div>
                         </NavigationMenuLink>
@@ -149,7 +149,7 @@ export default function Header() {
                               Teknis
                             </div>
                             <div className="text-xs text-gray-500 dark:text-gray-400">
-                              Coding, analisis data, otomasi
+                              Coding, web dev, UI & UX
                             </div>
                           </div>
                         </NavigationMenuLink>

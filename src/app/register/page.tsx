@@ -37,7 +37,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="h-screen overflow-hidden relative flex items-center justify-center p-4">
+    <div className="h-screen bg-linear-to-br from-indigo-50 to-violet-50 dark:from-gray-950 dark:to-gray-900 md:overflow-hidden relative flex items-center justify-center p-4">
       {/* Grid Pattern Background - Full Screen */}
         <div className="absolute inset-0 opacity-40">
             <GridPattern 
@@ -55,8 +55,8 @@ export default function RegisterPage() {
 
       {/* Content - Wider Card */}
       <div className="relative z-20 w-full max-w-2xl">
-        <Card className="border border-gray-200 dark:border-gray-800 shadow-2xl">
-          <div className="p-8">
+        <Card className="border border-gray-200 dark:border-gray-800 dark:bg-gray-900 shadow-2xl">
+          <div className="px-8 py-2">
             {/* Logo Section */}
             <div className="text-center mb-8">
               <div className="flex items-center justify-center space-x-2 mb-4">
@@ -188,20 +188,20 @@ export default function RegisterPage() {
                   required
                   className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600"
                 />
-                <Label htmlFor="terms" className="text-sm text-gray-700 dark:text-gray-300">
-                  Saya setuju dengan{" "}
-                  <Link href="/syarat-ketentuan">
-                    <span className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 hover:underline">
-                      Syarat & Ketentuan
-                    </span>
-                  </Link>
-                </Label>
+                <span className="text-sm text-gray-700 dark:text-gray-300">
+                  Saya setuju dengan {" "}
+                    <Link href={"syarat-ketentuan"}>
+                        <span className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 hover:underline">
+                        Syarat & Ketentuan
+                        </span>
+                    </Link>
+                </span>
               </div>
 
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all"
+                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all cursor-pointer"
               >
                 {isLoading ? (
                   <span className="flex items-center justify-center">
@@ -209,7 +209,7 @@ export default function RegisterPage() {
                     Memproses...
                   </span>
                 ) : (
-                  "Buat Akun"
+                  "Daftar"
                 )}
               </Button>
             </form>
@@ -220,7 +220,7 @@ export default function RegisterPage() {
                 <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white dark:bg-gray-950 text-gray-500 dark:text-gray-400">
+                <span className="px-4 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">
                   atau daftar dengan
                 </span>
               </div>

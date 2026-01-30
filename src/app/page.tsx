@@ -1,6 +1,8 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
-import PromptExamples from "@/components/prompt-example";
+import Pricing from "@/components/pricing";
+import PromptShowcase from "@/components/prompt-showcase";
 
 export default function Home() {
   return (
@@ -9,8 +11,10 @@ export default function Home() {
       
       <main className="flex-1">
         <Hero />
-        <PromptExamples />
+        <PromptShowcase />
+        <Pricing />
       </main>
+      <Footer />
     </div>
   );
 }

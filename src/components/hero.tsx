@@ -1,12 +1,13 @@
 import GridPattern from "./ui/grid-pattern";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Rocket, Zap, TrendingUp } from "lucide-react";
+import { Sparkles, Crown, Zap, TrendingUp } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 
 export default function Hero() {
   return (
     <section className="relative flex items-center justify-center overflow-hidden bg-linear-to-br from-indigo-50 to-violet-50 dark:from-gray-950 dark:to-gray-900">
       {/* Grid Pattern Background - subtle & professional */}
-      <div className="absolute inset-0 opacity-15">
+      <div className="absolute inset-0 opacity-40">
         <GridPattern 
           width={32} 
           height={32} 
@@ -40,14 +41,28 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 rounded-xl font-semibold text-lg shadow-md hover:shadow-lg transition-shadow">
+              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 rounded-xl font-semibold text-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
                 Cari Prompt
                 <Zap className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 px-8 py-6 rounded-xl font-semibold text-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/20">
-                Jual Prompt
-                <Rocket className="ml-2 w-5 h-5" />
-              </Button>
+              <div className="flex items-center justify-center gap-1 px-4 py-2">
+                <Crown className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />
+                    <div className="flex -space-x-1">
+                        <Avatar className="h-8 w-8 rounded-2xl ring-2 ring-background grayscale">
+                            <AvatarImage className="rounded-2xl" src="https://github.com/shadcn.png" alt="@shadcn" />
+                            <AvatarFallback>NA</AvatarFallback>
+                        </Avatar>
+                        <Avatar className="h-8 w-8 rounded-2xl ring-2 ring-background grayscale">
+                            <AvatarImage className="rounded-2xl" src="https://github.com/maxleiter.png" alt="@maxleiter" />
+                            <AvatarFallback>N</AvatarFallback>
+                        </Avatar>
+                        <Avatar className="h-8 w-8 rounded-2xl ring-2 ring-background grayscale">
+                            <AvatarImage className="rounded-2xl" src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                            <AvatarFallback>DA</AvatarFallback>
+                        </Avatar>
+                    </div>
+                <span className="text-md font-medium text-indigo-500 dark:text-indigo-400">500+</span>
+            </div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6">
