@@ -85,11 +85,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Visual Section - Prompt Preview */}
-          <div className="relative hidden lg:block">
-            <div className="relative">
+          {/* Visual Section - Prompt Preview - FULL RESPONSIVE */}
+          <div className="relative w-full">
+            <div className="relative max-w-xl mx-auto">
               {/* Main Prompt Card - Kategori Kreatif */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6 transform rotate-2 hover:rotate-0 transition-transform duration-300">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-4 sm:p-6 transform lg:rotate-2 hover:rotate-0 transition-transform duration-300">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <span className="inline-block px-3 py-1 bg-linear-to-r from-emerald-500 to-teal-600 text-white text-xs font-medium rounded-full">
@@ -164,8 +164,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Floating Stat Badge */}
-              <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 border border-indigo-200 dark:border-indigo-800/50 transform -rotate-3">
+              {/* Floating Stat Badge - Hanya desktop */}
+              <div className="absolute hidden lg:block -top-6 -right-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 border border-indigo-200 dark:border-indigo-800/50 transform -rotate-3">
                 <div className="flex items-center">
                   <Instagram className="w-5 h-5 text-red-500 dark:text-red-400 mr-2" />
                   <div>

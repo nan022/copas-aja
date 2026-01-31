@@ -3,7 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// Hapus SpeedInsights jika belum install
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -11,7 +11,6 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
-// SEO Metadata Configuration
 export const metadata: Metadata = {
   title: {
     default: "Copas Aja - Platform Prompt AI Berkualitas",
@@ -45,9 +44,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://copasaja.com"),
   alternates: {
     canonical: "/",
-    languages: {
-      "id-ID": "/id-ID",
-    },
   },
   openGraph: {
     type: "website",
@@ -58,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "Copas Aja",
     images: [
       {
-        url: "/images/logos/logocopas.svg",
+        url: "./images/logos/logocopas.svg",
         width: 1200,
         height: 630,
         alt: "Copas Aja - Platform Prompt AI Berkualitas",
@@ -71,7 +67,7 @@ export const metadata: Metadata = {
     description: "Platform jual-beli prompt AI berkualitas dari praktisi. Dapatkan hasil maksimal dengan prompt premium untuk bisnis, kreatif, edukasi, dan teknis.",
     creator: "@copasaja",
     site: "@copasaja",
-    images: ["/images/logos/logocopas.svg"],
+    images: ["./images/logos/logocopas.svg"],
   },
   robots: {
     index: true,
@@ -84,17 +80,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
-  category: "technology",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Copas Aja",
-  },
-  applicationName: "Copas Aja",
-  manifest: "/site.webmanifest",
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -115,37 +100,23 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
-        {/* Preconnect to external domains */}
+        {/* Favicon - WAJIB untuk override Next.js default */}
+        <link rel="icon" href="./images/logos/logocopas.svg" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
+        {/* Preconnect */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
-        <link rel="icon" href="/logos/logocopas.svg" sizes="any" />
-
         {/* Canonical URL */}
         <link rel="canonical" href="https://copasaja.com" />
 
-        {/* Theme color for browsers */}
+        {/* Theme color */}
         <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1e1b4b" media="(prefers-color-scheme: dark)" />
 
         {/* Viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-
-        {/* Robots */}
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-
-        {/* Additional SEO tags */}
-        <meta name="author" content="Copas Aja" />
-        <meta name="language" content="Indonesian" />
-        <meta name="country" content="Indonesia" />
-        <meta name="rating" content="general" />
-        <meta name="distribution" content="global" />
-        <meta name="classification" content="Technology, AI, Software" />
 
         {/* Schema.org structured data */}
         <script
@@ -162,7 +133,7 @@ export default function RootLayout({
                 name: "Copas Aja",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://copasaja.com/images/logos/logocopas.svg",
+                  url: "https://copasaja.com./images/logos/logocopas.svg",
                 },
               },
               potentialAction: {
@@ -186,7 +157,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <Analytics />
-        <SpeedInsights />
+        {/* <SpeedInsights /> - Uncomment setelah install package */}
       </body>
     </html>
   );

@@ -155,7 +155,7 @@ export default function Header() {
                         </NavigationMenuLink>
 
                         <NavigationMenuLink
-                          href="/jelajahi"
+                          href="/kategori"
                           className="flex items-left gap-2 px-3 py-2.5 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors group"
                         >
                           <div className="w-8 h-8 rounded-lg bg-linear-to-br from-indigo-600 to-violet-700 flex items-center justify-center flex-shrink-0">
@@ -177,7 +177,7 @@ export default function Header() {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="#pricing"
+                    href="/pricing"
                     className="px-2 py-1 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                   >
                     Harga
