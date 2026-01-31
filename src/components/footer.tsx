@@ -154,7 +154,7 @@ export default function Footer() {
               © {new Date().getFullYear()} copasaja.com. All rights reserved.
             </div>
             
-            <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-6">
               <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
                 <span>Made with</span>
                 <span className="text-red-500">❤️</span>

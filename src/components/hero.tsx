@@ -36,7 +36,9 @@ export default function Hero() {
               </h1>
               
               <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl">
-                Prompt yang dirancang tepat bikin hasil AI jadi sangat lebih baik. Dapetin prompt siap pakai dari ahli kami, daripada mikir lama buat prompting mending <span className="text-indigo-600 dark:text-indigo-400"> Copas Aja!</span>
+                Prompt yang tepat bikin hasil AI jadi jauh lebih maksimal. 
+                Dapetin prompt siap pakai untuk ChatGPT, Gemini, dan 10+ 
+                model AI lainnya dari ahli kami. Daripada buang waktu mikir prompting, mending <span className="text-indigo-600 dark:text-indigo-400"> Copas Aja!</span>
               </p>
             </div>
 
@@ -46,37 +48,48 @@ export default function Hero() {
                 <Zap className="ml-2 w-5 h-5" />
               </Button>
               <div className="flex items-center justify-center gap-1 px-4 py-2">
-                <Crown className="h-7 w-7 text-indigo-500 dark:text-indigo-400" />
-                    <div className="flex -space-x-1">
-                        <Avatar className="h-8 w-8 rounded-2xl ring-2 ring-background grayscale">
-                            <AvatarImage className="rounded-2xl" src="https://github.com/shadcn.png" alt="@shadcn" />
-                            <AvatarFallback>NA</AvatarFallback>
-                        </Avatar>
-                        <Avatar className="h-8 w-8 rounded-2xl ring-2 ring-background grayscale">
-                            <AvatarImage className="rounded-2xl" src="https://github.com/maxleiter.png" alt="@maxleiter" />
-                            <AvatarFallback>N</AvatarFallback>
-                        </Avatar>
-                        <Avatar className="h-8 w-8 rounded-2xl ring-2 ring-background grayscale">
-                            <AvatarImage className="rounded-2xl" src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-                            <AvatarFallback>DA</AvatarFallback>
-                        </Avatar>
-                    </div>
-                <span className="text-md font-medium text-indigo-500 dark:text-indigo-400">500+</span>
-            </div>
+                <Sparkles className="h-7 w-7 text-indigo-500 dark:text-indigo-400" />
+                
+                <div className="flex -space-x-1">
+                  <div className="h-8 w-8 rounded-2xl ring-3 ring-background overflow-hidden transition-all duration-200">
+                    <img 
+                      src="/images/logos/gpt.svg"
+                      alt="AI Logo" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="h-8 w-8 rounded-2xl ring-3 ring-background overflow-hidden transition-all duration-200">
+                    <img 
+                      src="/images/logos/qwen.svg"
+                      alt="AI Logo" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="h-8 w-8 rounded-2xl ring-3 ring-background overflow-hidden transition-all duration-200">
+                    <img 
+                      src="/images/logos/gemini.svg" 
+                      alt="AI Logo" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                <span className="text-md font-medium text-indigo-500 dark:text-indigo-400">10+</span>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400">40%</div>
+                <div className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400">100%</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Hasil Lebih Baik</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400">300%</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Pertumbuhan Pasar</div>
+                <div className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400">10+</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">AI Model Support</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400">5 Menit</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Hemat Waktu</div>
+                <div className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400">100+</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Member Terdaftar</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400">1000+</div>
@@ -157,7 +170,7 @@ export default function Hero() {
                     </div>
                     <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">+24 lainnya</span>
                   </div>
-                  <Button className="bg-linear-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg px-5 py-2.5 font-medium shadow-lg hover:shadow-xl transition-all">
+                  <Button className="bg-linear-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg px-5 py-2.5 font-medium shadow-lg hover:shadow-xl transition-all cursor-pointer">
                     <Copy className="w-4 h-4 mr-1.5" />
                     Salin Prompt
                   </Button>

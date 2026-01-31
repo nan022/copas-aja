@@ -34,8 +34,7 @@ export default async function CategoryDetailPage({
       <div className="min-h-screen bg-white dark:bg-gray-900">
         <Header />
         <div className="text-center max-w-md mx-auto py-16">
-          <div className="w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/30 
-                        flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -89,9 +88,48 @@ export default async function CategoryDetailPage({
       {/* Content Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="space-y-8">
+          {/* Saran AI Section */}
+          <div className="bg-linear-to-br from-indigo-50 to-violet-50 dark:from-indigo-900/20 dark:to-violet-900/20 border border-indigo-200 dark:border-indigo-800 rounded-xl p-6 mt-8">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center shrink-0">
+                <Sparkles className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-3">
+                  Saran AI untuk {category.name}
+                </h3>
+                
+                <div className="flex flex-wrap items-center gap-2">
+                  {category.rekomAI.split(',').map((ai: string, index: number) => {
+                    const aiName = ai.trim();
+                    return (
+                      <Link
+                        key={index}
+                        href="#"
+                        className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 
+                                border border-gray-200 dark:border-gray-700 rounded-lg 
+                                px-4 py-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 
+                                transition-colors group"
+                      >
+                        <div className="w-6 h-6 rounded-full bg-linear-to-br from-indigo-500 to-violet-600 
+                                      flex items-center justify-center">
+                          <span className="text-white font-bold text-xs">{aiName.charAt(0)}</span>
+                        </div>
+                        <span className="font-medium text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                          {aiName}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+          
           {/* Isi Prompt */}
           <PromptCard 
-            title="Isi Prompt" 
+            title="Isi Prompt"
+            name={category.name} 
             content={category.promptContent} 
             iconType="prompt" 
           />
@@ -99,6 +137,7 @@ export default async function CategoryDetailPage({
           {/* Hasil Prompt */}
           <PromptCard 
             title="Hasil Prompt" 
+            name={category.name}
             content={category.promptResult} 
             iconType="result" 
           />
@@ -118,7 +157,7 @@ export default async function CategoryDetailPage({
                 </span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Ada 1000+ prompt spesifik sesuai kebutuhan kamu!
+                Masih ada 1000+ prompt spesifik sesuai kebutuhan kamu!
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link

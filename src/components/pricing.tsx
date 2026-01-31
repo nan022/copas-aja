@@ -28,12 +28,12 @@ export default function Pricing() {
     {
       id: 2,
       name: "Pro",
-      price: 9000,
+      price: 12000,
       period: "Bulanan",
       icon: Zap,
       color: "from-indigo-500 to-purple-600",
       features: [
-        { name: "Akses 100+ prompt premium", available: true },
+        { name: "Akses semua prompt", available: true },
         { name: "Semua kategori", available: true },
         { name: "Update harian", available: true },
         { name: "Komunitas eksklusif", available: true },
@@ -64,7 +64,6 @@ export default function Pricing() {
         { name: "Support 24/7", available: true },
         { name: "Early access + beta features", available: true },
         { name: "Konsultasi bulanan", available: true },
-        { name: "Custom prompt generator", available: true },
       ],
       cta: "Berlangganan Premium",
       ctaVariant: "default",
@@ -72,12 +71,6 @@ export default function Pricing() {
       badge: "TERBAIK",
     },
   ];
-
-  const yearlyPlans = plans.map(plan => ({
-    ...plan,
-    price: plan.price === 0 ? 0 : Math.round(plan.price * 12 * 0.8), // 20% discount
-    period: plan.price === 0 ? "Selamanya" : "Tahunan",
-  }));
 
   return (
     <section id="pricing" className="py-16 bg-linear-to-br from-indigo-50 to-violet-50 dark:from-gray-950 dark:to-gray-900">
@@ -92,7 +85,7 @@ export default function Pricing() {
             Akses <span className="text-indigo-600 dark:text-indigo-400">Semua Prompt Premium</span> dengan Satu Langganan
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Hemat waktu dan dapatkan hasil maksimal dengan akses unlimited ke ribuan prompt AI berkualitas tinggi. Pilih paket yang sesuai kebutuhan Anda.
+            Hemat waktu dan dapatkan hasil maksimal dengan akses unlimited ke ribuan prompt AI berkualitas tinggi. Pilih paket yang sesuai kebutuhan kamu.
           </p>
         </div>
 
@@ -107,7 +100,7 @@ export default function Pricing() {
             <button
               className="px-6 py-2.5 text-sm font-medium rounded-md transition-all duration-300 text-gray-700 dark:text-gray-300"
             >
-              Tahunan <span className="ml-1 text-xs text-green-600">(-20%)</span>
+              Tahunan <span className="ml-1 text-xs text-green-600">(-30%)</span>
             </button>
           </div>
         </div>
@@ -170,7 +163,7 @@ export default function Pricing() {
                     </div>
                     {plan.price > 0 && (
                       <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                        Hemat 20% dengan paket tahunan
+                        Hemat 30% dengan paket tahunan
                       </p>
                     )}
                   </div>

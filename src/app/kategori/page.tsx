@@ -65,7 +65,7 @@ export default function KategoriPage() {
                 <div className="flex items-start gap-4">
                   {/* Icon dengan gradient */}
                   <div className={`w-12 h-12 rounded-xl ${gradientClass} 
-                                 flex items-center justify-center flex-shrink-0
+                                 flex items-center justify-center shrink-0
                                  group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
@@ -110,7 +110,7 @@ export default function KategoriPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="/jelajahi"
+                href="/pricing"
                 className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 
                          text-white rounded-lg font-medium transition-colors
                          flex items-center justify-center gap-2"

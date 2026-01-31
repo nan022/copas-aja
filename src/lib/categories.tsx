@@ -1,6 +1,7 @@
 export interface Category {
   slug: string;
   name: string;
+  rekomAI: string;
   description: string;
   icon: keyof typeof ICONS;
   promptContent: string;
@@ -39,6 +40,7 @@ export const CATEGORIES: Record<string, Category> = {
   marketing: {
     slug: "marketing",
     name: "Marketing",
+    rekomAI: "Chat GPT",
     description: "Iklan, copywriting, social media",
     icon: "messageSquare",
     promptContent: "Buatkan caption Instagram untuk promo diskon 50% produk kecantikan dengan tone friendly dan urgency",
@@ -47,6 +49,7 @@ export const CATEGORIES: Record<string, Category> = {
   bisnis: {
     slug: "bisnis",
     name: "Bisnis",
+    rekomAI: "Chat GPT",
     description: "Analisis, laporan, strategi",
     icon: "barChart",
     promptContent: "Buatkan executive summary untuk laporan keuangan Q4 dengan highlight growth 25%",
@@ -55,14 +58,16 @@ export const CATEGORIES: Record<string, Category> = {
   kreatif: {
     slug: "kreatif",
     name: "Kreatif",
+    rekomAI: "Chat GPT, Midjourney",
     description: "Desain, konten, ide kreatif",
     icon: "image",
-    promptContent: "Generate ide konten TikTok untuk UMKM keripik singkong dengan konsep edukasi + hiburan",
-    promptResult: "🎬 IDE KONTEN TIKTOK:\n1. Time-lapse proses penggorengan dengan text 'Rahasia keripik renyah ala nenek'\n2. Challenge 'Tebak level kepedasan' bareng customer\n3. Behind the scene packing order + ucapan terima kasih\n🎵 Gunakan sound trending + efek zoom"
+    promptContent: "Pria muda Indonesia akhir 20-an, rambut hitam sebahu bergelombang tertiup angin malam, kulit sawo matang bercahaya dengan tekstur pori halus, jerawat kering di dagu, bekas luka kecil di alis kiri. Meniup mie bakso kuah pedas yang mengepul dengan sumpit bambu, bibir dengan lip tint merah bata. Mengenakan kacamata bulat retro oversized frame emas lensa gradient smoke memantulkan neon (Nasihuy), jaket denim vintage indigo dengan sulaman parang Jawa di lengan. Latar warung pinggir jalan Jakarta malam: dinding bata ekspos grafiti, lampu neon kuning temaram, asap rokok bercampur uap mie. Rim light golden hour menyinari rambut dan tetesan kuah di bibir. Tangan kiri memegang mangkuk gerabah berisi bakso kuah merah, daun bawang, kerupuk udang. Postur condong depan dengan senyum tipis menggoda. Fujifilm GFX 100S, Classic Chrome, f/1.4, bokeh cahaya lampu jalan, grain halus, color grading warm keemasan, medium close-up rule of thirds, jiwa urban Indonesia.",
+    promptResult: "/images/hasil-dummy.svg"
   },
   edukasi: {
     slug: "edukasi",
     name: "Edukasi",
+    rekomAI: "Chat GPT",
     description: "Materi, tugas, skripsi",
     icon: "graduationCap",
     promptContent: "Buat outline materi pembelajaran AI untuk pemula dengan durasi 60 menit",
@@ -71,6 +76,7 @@ export const CATEGORIES: Record<string, Category> = {
   teknis: {
     slug: "teknis",
     name: "Teknis",
+    rekomAI: "Chat GPT",
     description: "Coding, web dev, UI & UX",
     icon: "code",
     promptContent: "Generate React component untuk card dengan hover effect dan dark mode support",
@@ -79,6 +85,7 @@ export const CATEGORIES: Record<string, Category> = {
   copywriting: {
     slug: "copywriting",
     name: "Copywriting",
+    rekomAI: "Chat GPT",
     description: "Email, sales page, landing page",
     icon: "brush",
     promptContent: "Tulis email newsletter untuk launch produk baru dengan subject line yang click-worthy",
@@ -87,6 +94,7 @@ export const CATEGORIES: Record<string, Category> = {
   startup: {
     slug: "startup",
     name: "Startup",
+    rekomAI: "Chat GPT",
     description: "Pitch deck, business plan",
     icon: "briefcase",
     promptContent: "Buat pitch deck outline untuk startup edtech dengan target investor",
@@ -95,6 +103,7 @@ export const CATEGORIES: Record<string, Category> = {
   akademik: {
     slug: "akademik",
     name: "Akademik",
+    rekomAI: "Chat GPT",
     description: "Skripsi, jurnal, penelitian",
     icon: "bookOpen",
     promptContent: "Buat outline bab 1 skripsi tentang dampak AI terhadap produktivitas kerja",
@@ -103,6 +112,7 @@ export const CATEGORIES: Record<string, Category> = {
   developer: {
     slug: "developer",
     name: "Developer",
+    rekomAI: "Chat GPT",
     description: "Code, debugging, optimization",
     icon: "laptop",
     promptContent: "Generate Python script untuk web scraping dengan error handling dan export ke CSV",

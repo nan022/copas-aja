@@ -1,11 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, MessageSquare, Image, BarChart, Code, TrendingUp, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function PromptShowcase() {
   const showcaseItems = [
     {
       id: 1,
+      slug: 'marketing',
       category: "Marketing",
       title: "Iklan Facebook yang Menjual",
       prompt: "Tulis iklan Facebook yang menjual untuk produk skincare alami dengan target audiens wanita 25-40 tahun di Indonesia...",
@@ -23,10 +25,11 @@ export default function PromptShowcase() {
     },
     {
       id: 2,
+      slug: "kreatif",
       category: "Kreatif",
-      title: "Desain Logo Minimalis",
-      prompt: "Generate logo minimalis untuk brand kopi lokal bernama 'Kopi Nusantara' dengan warna earthy tones...",
-      resultPreview: "/images/dummy-image.svg",
+      title: "Editing Foto",
+      prompt: "Buat potret sinematik hiper-realistis seorang pria muda Indonesia akhir 20-an dengan aura effortless cool, rambut hitam legam sebahu bergelombang alami (wavy) tertiup angin malam ...",
+      resultPreview: "/images/hasil-dummy.svg",
       resultType: "image",
       icon: Image,
       color: "from-emerald-500 to-teal-600",
@@ -40,6 +43,7 @@ export default function PromptShowcase() {
     },
     {
       id: 3,
+      slug: "bisnis",
       category: "Bisnis",
       title: "Analisis Data Keuangan",
       prompt: "Buat analisis laporan keuangan Q4 2024 dalam format executive summary...",
@@ -57,6 +61,7 @@ export default function PromptShowcase() {
     },
     {
       id: 4,
+      slug: "edukasi",
       category: "Edukasi",
       title: "Materi Presentasi Interaktif",
       prompt: "Buat materi presentasi tentang Machine Learning untuk mahasiswa semester 3...",
@@ -74,6 +79,7 @@ export default function PromptShowcase() {
     },
     {
       id: 5,
+      slug: "teknis",
       category: "Teknis",
       title: "Kode Python untuk Automation",
       prompt: "Buat script Python untuk otomatisasi scraping data dari website e-commerce...",
@@ -91,6 +97,7 @@ export default function PromptShowcase() {
     },
     {
       id: 6,
+      slug: "content",
       category: "Content",
       title: "Script Video YouTube",
       prompt: "Buat script video YouTube durasi 10 menit tentang cara menggunakan AI untuk bisnis...",
@@ -194,13 +201,17 @@ export default function PromptShowcase() {
                     ))}
                   </div>
                   
-                  <Button
-                    variant="outline"
-                    className="w-full border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors"
+                  <Link
+                  href={"kategori/" + item.slug}
                   >
-                    Lihat Detail
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors cursor-pointer"
+                    >
+                      Lihat Detail
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             );
@@ -208,7 +219,7 @@ export default function PromptShowcase() {
         </div>
 
         {/* Before/After Section */}
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
               Perbedaan Prompt Biasa vs Prompt Premium

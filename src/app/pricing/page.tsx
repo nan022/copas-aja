@@ -21,11 +21,12 @@ export default function PricingPage() {
         { name: "Akses 10 prompt gratis", available: true },
         { name: "Kategori dasar", available: true },
         { name: "Update mingguan", available: true },
-        { name: "Komunitas dasar", available: true },
+        { name: "Komunitas (Discord)", available: false },
         { name: "Prompt premium", available: false },
         { name: "Kategori eksklusif", available: false },
         { name: "Prioritas support", available: false },
         { name: "Download unlimited", available: false },
+        { name: "Early access fitur baru", available: false },
       ],
       cta: "Mulai Gratis",
       ctaVariant: "outline",
@@ -34,15 +35,15 @@ export default function PricingPage() {
     {
       id: 2,
       name: "Pro",
-      price: 9000,
+      price: 12000,
       period: "Bulanan",
       icon: Zap,
       color: "from-indigo-500 to-purple-600",
       features: [
-        { name: "Akses 100+ prompt premium", available: true },
+        { name: "Akses semua prompt", available: true },
         { name: "Semua kategori", available: true },
         { name: "Update harian", available: true },
-        { name: "Komunitas eksklusif", available: true },
+        { name: "Komunitas eksklusif (Discord)", available: true },
         { name: "Request prompt custom", available: true },
         { name: "Download unlimited", available: true },
         { name: "Prioritas support", available: true },
@@ -64,13 +65,11 @@ export default function PricingPage() {
         { name: "Akses semua prompt", available: true },
         { name: "Semua kategori + eksklusif", available: true },
         { name: "Update real-time", available: true },
-        { name: "Komunitas VIP", available: true },
+        { name: "Komunitas VIP (Discord)", available: true },
         { name: "Request prompt custom prioritas", available: true },
         { name: "Download unlimited", available: true },
         { name: "Support 24/7", available: true },
         { name: "Early access + beta features", available: true },
-        { name: "Konsultasi bulanan", available: true },
-        { name: "Custom prompt generator", available: true },
       ],
       cta: "Berlangganan Premium",
       ctaVariant: "default",
@@ -95,7 +94,7 @@ export default function PricingPage() {
                 Akses <span className="text-indigo-600 dark:text-indigo-400">Semua Prompt Premium</span> dengan Satu Langganan
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Hemat waktu dan dapatkan hasil maksimal dengan akses unlimited ke ribuan prompt AI berkualitas tinggi. Pilih paket yang sesuai kebutuhan Anda.
+                Hemat waktu dan dapatkan hasil maksimal dengan akses unlimited ke ribuan prompt AI berkualitas tinggi. Pilih paket yang sesuai kebutuhan kamu.
               </p>
             </div>
           </div>
@@ -115,7 +114,7 @@ export default function PricingPage() {
                 <button
                   className="px-6 py-2.5 text-sm font-medium rounded-md transition-all duration-300 text-gray-700 dark:text-gray-300"
                 >
-                  Tahunan <span className="ml-1 text-xs text-green-600">(-20%)</span>
+                  Tahunan <span className="ml-1 text-xs text-green-600">(-30%)</span>
                 </button>
               </div>
             </div>
@@ -178,7 +177,7 @@ export default function PricingPage() {
                         </div>
                         {plan.price > 0 && (
                           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                            Hemat 20% dengan paket tahunan
+                            Hemat 30% dengan paket tahunan
                           </p>
                         )}
                       </div>
@@ -225,14 +224,14 @@ export default function PricingPage() {
         </section>
 
         {/* Comparison Table Section */}
-        <section className="py-24 bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900">
+        <section className="py-16 bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Perbandingan <span className="text-indigo-600 dark:text-indigo-400">Lengkap</span> Setiap Paket
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                Lihat perbedaan detail setiap paket untuk memilih yang paling sesuai dengan kebutuhan Anda
+                Lihat perbedaan detail setiap paket untuk memilih yang paling sesuai dengan kebutuhan kamu
               </p>
             </div>
 
@@ -398,7 +397,7 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 bg-white dark:bg-gray-900">
+        <section className="py-16 bg-white dark:bg-gray-900">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
