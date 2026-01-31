@@ -53,21 +53,21 @@ export default function Hero() {
                 <div className="flex -space-x-1">
                   <div className="h-8 w-8 rounded-2xl ring-3 ring-background overflow-hidden transition-all duration-200">
                     <img 
-                      src="/images/logos/gpt.svg"
+                      src="/images/logos/gpt.png"
                       alt="AI Logo" 
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div className="h-8 w-8 rounded-2xl ring-3 ring-background overflow-hidden transition-all duration-200">
                     <img 
-                      src="/images/logos/qwen.svg"
+                      src="/images/logos/gemini.png"
                       alt="AI Logo" 
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div className="h-8 w-8 rounded-2xl ring-3 ring-background overflow-hidden transition-all duration-200">
                     <img 
-                      src="/images/logos/gemini.svg" 
+                      src="/images/logos/qwen.png" 
                       alt="AI Logo" 
                       className="h-full w-full object-cover"
                     />
