@@ -44,7 +44,7 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-linear-to-br from-indigo-600/5 via-transparent to-transparent" />
         <div className="relative">
 
-            <Card className="w-full max-w-md border border-gray-200 dark:border-gray-800 dark:bg-gray-900 shadow-2xl">
+            <Card className="w-full md:w-100 max-w-md border border-gray-200 dark:border-gray-800 dark:bg-gray-900 shadow-2xl">
                 <div className="px-8 py-2">
                 {/* Logo Section */}
                 <div className="text-center mb-8">
@@ -131,39 +131,6 @@ export default function LoginPage() {
                     )}
                     </Button>
                 </form>
-
-                {/* Divider */}
-                <div className="relative my-8">
-                    <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
-                    </div>
-                    <div className="relative flex justify-center text-sm">
-                    <span className="px-4 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">
-                        atau lanjutkan dengan
-                    </span>
-                    </div>
-                </div>
-
-                {/* Social Login */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <Button
-                        type="button"
-                        variant="outline"
-                        className="w-full border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                    >
-                        <Chrome className="w-5 h-5 mr-2 text-gray-700 dark:text-gray-300" />
-                        Login with Google
-                    </Button>
-
-                    <Button
-                        type="button"
-                        variant="outline"
-                        className="w-full border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                    >
-                        <Github className="w-5 h-5 mr-2 text-gray-700 dark:text-gray-300" />
-                        Login with GitHub
-                    </Button>
-                </div>
 
                 {/* Register Link */}
                 <div className="mt-6 text-center">

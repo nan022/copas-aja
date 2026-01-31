@@ -115,13 +115,13 @@ export default function PromptShowcase() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-sm font-medium mb-4">
             <Sparkles className="w-4 h-4 mr-2" />
-            Lihat Hasil Nyata
+            Lihat Hasil
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Dari Prompt Biasa ke <span className="text-indigo-600 dark:text-indigo-400">Hasil yang Memukau</span>
+            Prompt yang Tepat Untuk <span className="text-indigo-600 dark:text-indigo-400">Hasil yang Maksimal</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Ini bukan sekadar teks biasa. Prompt yang tepat menghasilkan output yang bisa langsung dipakai untuk bisnis, kreatif, atau pekerjaan Anda.
+            Ini bukan sekedar teks biasa. Prompt yang tepat bisa hasilin output yang langsung dipakai buat programming, web dev, bisnis, kreatif, atau kerjaan kamu.
           </p>
         </div>
 
