@@ -286,7 +286,7 @@ export default function CheckoutPage() {
               <Button
                 onClick={handlePayment}
                 disabled={isLoading || !termsAccepted}
-                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl text-lg shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed relative overflow-hidden group"
+                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl text-lg shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-30 relative overflow-hidden group"
               >
                 {isLoading ? (
                   <span className="flex items-center justify-center">
@@ -297,7 +297,7 @@ export default function CheckoutPage() {
                   <>
                     <span className="flex items-center justify-center">
                       <Lock className="w-4 h-4 mr-2" />
-                      Bayar Sekarang - Rp 49.000
+                      Bayar Sekarang
                     </span>
                     <div className="absolute inset-0 bg-linear-to-r from-indigo-700 to-violet-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                   </>

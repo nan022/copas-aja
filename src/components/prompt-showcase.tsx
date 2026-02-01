@@ -15,11 +15,6 @@ export default function PromptShowcase() {
       resultType: "text",
       icon: MessageSquare,
       color: "from-amber-500 to-orange-600",
-      stats: [
-        { label: "CTR", value: "+35%" },
-        { label: "Konversi", value: "+40%" },
-        { label: "Engagement", value: "+50%" },
-      ],
       rating: 4.9,
       reviews: 42,
     },
@@ -33,11 +28,6 @@ export default function PromptShowcase() {
       resultType: "image",
       icon: Image,
       color: "from-emerald-500 to-teal-600",
-      stats: [
-        { label: "Brand Recall", value: "+60%" },
-        { label: "Profesional", value: "95%" },
-        { label: "Unique", value: "100%" },
-      ],
       rating: 4.8,
       reviews: 38,
     },
@@ -51,11 +41,6 @@ export default function PromptShowcase() {
       resultType: "document",
       icon: BarChart,
       color: "from-blue-500 to-cyan-600",
-      stats: [
-        { label: "Insight", value: "15+" },
-        { label: "Akurasi", value: "98%" },
-        { label: "Actionable", value: "100%" },
-      ],
       rating: 4.7,
       reviews: 29,
     },
@@ -69,11 +54,6 @@ export default function PromptShowcase() {
       resultType: "slides",
       icon: MessageSquare,
       color: "from-purple-500 to-pink-600",
-      stats: [
-        { label: "Pemahaman", value: "+70%" },
-        { label: "Retention", value: "+55%" },
-        { label: "Engagement", value: "+80%" },
-      ],
       rating: 4.9,
       reviews: 51,
     },
@@ -87,11 +67,6 @@ export default function PromptShowcase() {
       resultType: "code",
       icon: Code,
       color: "from-zinc-500 to-slate-600",
-      stats: [
-        { label: "Efisiensi", value: "+90%" },
-        { label: "Error Rate", value: "-95%" },
-        { label: "Time Saved", value: "8 jam" },
-      ],
       rating: 4.8,
       reviews: 35,
     },
@@ -105,11 +80,6 @@ export default function PromptShowcase() {
       resultType: "text",
       icon: MessageSquare,
       color: "from-rose-500 to-pink-600",
-      stats: [
-        { label: "Watch Time", value: "+45%" },
-        { label: "Retention", value: "+60%" },
-        { label: "CTR", value: "+35%" },
-      ],
       rating: 4.7,
       reviews: 48,
     },
@@ -186,20 +156,6 @@ export default function PromptShowcase() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 line-clamp-2">
                     {item.prompt}
                   </p>
-                  
-                  {/* Stats Grid */}
-                  <div className="grid grid-cols-3 gap-3 mb-6">
-                    {item.stats.map((stat, index) => (
-                      <div key={index} className="text-center">
-                        <div className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
-                          {stat.label}
-                        </div>
-                        <div className="text-sm font-bold text-indigo-600 dark:text-indigo-400">
-                          {stat.value}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
                   
                   <Link
                   href={"kategori/" + item.slug}
