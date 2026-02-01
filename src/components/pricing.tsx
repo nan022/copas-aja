@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, CheckCircle, Crown, Star, Zap, TrendingUp, Users, Shield, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Pricing() {
   const plans = [
@@ -22,6 +23,7 @@ export default function Pricing() {
         { name: "Download unlimited", available: false },
       ],
       cta: "Mulai Gratis",
+      url: "/kategori",
       ctaVariant: "outline",
       recommended: false,
     },
@@ -43,6 +45,7 @@ export default function Pricing() {
         { name: "Early access fitur baru", available: true },
       ],
       cta: "Berlangganan Pro",
+      url: "/checkout",
       ctaVariant: "default",
       recommended: true,
       badge: "POPULER",
@@ -66,6 +69,7 @@ export default function Pricing() {
         { name: "Konsultasi bulanan", available: true },
       ],
       cta: "Berlangganan Premium",
+      url: "/checkout",
       ctaVariant: "default",
       recommended: false,
       badge: "TERBAIK",
@@ -189,18 +193,22 @@ export default function Pricing() {
                   </div>
 
                   {/* CTA Button */}
-                  <Button
-                    variant={plan.ctaVariant as any}
-                    className={`w-full ${
-                      plan.recommended
-                        ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg"
-                        : plan.ctaVariant === "outline"
-                        ? "border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20"
-                        : "bg-indigo-600 hover:bg-indigo-700 text-white"
-                    } py-3 rounded-lg font-semibold text-lg transition-all duration-300`}
+                  <Link
+                  href={plan.url}
                   >
-                    {plan.cta}
-                  </Button>
+                    <Button
+                      variant={plan.ctaVariant as any}
+                      className={`w-full cursor-pointer ${
+                        plan.recommended
+                          ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg"
+                          : plan.ctaVariant === "outline"
+                          ? "border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20"
+                          : "bg-indigo-600 hover:bg-indigo-700 text-white"
+                      } py-3 rounded-lg font-semibold text-lg transition-all duration-300 cursor`}
+                    >
+                      {plan.cta}
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             );
