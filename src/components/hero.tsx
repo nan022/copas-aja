@@ -2,6 +2,7 @@ import GridPattern from "./ui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Crown, Zap, TrendingUp, Copy, Laugh, User, Instagram } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -36,17 +37,18 @@ export default function Hero() {
               </h1>
               
               <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl">
-                Prompt yang tepat bikin hasil AI jadi jauh lebih maksimal. 
                 Dapetin prompt siap pakai untuk ChatGPT, Gemini, dan 10+ 
                 model AI lainnya dari ahli kami. Daripada buang waktu mikir prompting, mending <span className="text-indigo-600 dark:text-indigo-400"> Copas Aja!</span>
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 rounded-xl font-semibold text-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-                Cari Prompt
-                <Zap className="ml-2 w-5 h-5" />
-              </Button>
+            <div className="flex flex-row justify-center md:justify-start gap-4">
+              <Link href={"/kategori"}>
+                <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 rounded-xl font-semibold text-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+                  Cari Prompt
+                  <Zap className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
               <div className="flex items-center justify-center gap-1 px-4 py-2">
                 <Sparkles className="h-7 w-7 text-indigo-500 dark:text-indigo-400" />
                 
@@ -170,10 +172,14 @@ export default function Hero() {
                     </div>
                     <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">+24 lainnya</span>
                   </div>
-                  <Button className="bg-linear-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg px-5 py-2.5 font-medium shadow-lg hover:shadow-xl transition-all cursor-pointer">
-                    <Copy className="w-4 h-4 mr-1.5" />
-                    Salin Prompt
-                  </Button>
+                  <Link
+                  href={"/pricing"}
+                  >
+                    <Button className="bg-linear-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg px-5 py-2.5 font-medium shadow-lg hover:shadow-xl transition-all cursor-pointer">
+                      <Copy className="w-4 h-4 mr-1.5" />
+                      Salin Prompt
+                    </Button>
+                  </Link>
                 </div>
               </div>
 

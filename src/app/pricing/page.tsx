@@ -104,7 +104,7 @@ export default function PricingPage() {
               {[
                 {
                   question: "Apakah ada masa trial untuk paket Pro atau Premium?",
-                  answer: "Tidak, langganan cuma 9 ribu doang masa ga bisa sih."
+                  answer: "GAK, langganan cuma 12 ribu doang per bulan masa ga bisa sih!"
                 },
                 {
                   question: "Bagaimana cara pembayaran?",
@@ -120,7 +120,7 @@ export default function PricingPage() {
                   className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 bg-white dark:bg-gray-900 hover:border-indigo-200 dark:hover:border-indigo-800 transition-colors"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center shrink-0 mt-1">
                       <span className="text-indigo-600 dark:text-indigo-400 font-bold text-sm">{index + 1}</span>
                     </div>
                     <div>

@@ -7,13 +7,14 @@ export default function Pricing() {
   const plans = [
     {
       id: 1,
-      name: "Free = Miskuy",
+      name: "Free (Miskuy)",
       price: 0,
-      period: "Izin 🫷🏻",
+      originalPrice: 0,
+      period: "7 Hari",
       icon: Star,
       color: "from-gray-400 to-gray-500",
       features: [
-        { name: "Akses 10 prompt gratis", available: true },
+        { name: "Akses beberapa prompt gratis", available: true },
         { name: "Kategori dasar", available: true },
         { name: "Update mingguan", available: true },
         { name: "Komunitas dasar", available: true },
@@ -31,6 +32,7 @@ export default function Pricing() {
       id: 2,
       name: "Pro",
       price: 12000,
+      originalPrice: 15000,
       period: "Bulanan",
       icon: Zap,
       color: "from-indigo-500 to-purple-600",
@@ -54,6 +56,7 @@ export default function Pricing() {
       id: 3,
       name: "Premium",
       price: 99000,
+      originalPrice: 149000,
       period: "Tahunan",
       icon: Crown,
       color: "from-amber-500 to-orange-600",
@@ -154,22 +157,39 @@ export default function Pricing() {
 
                   {/* Price */}
                   <div className="mb-8">
-                    <div className="flex items-baseline">
-                      <span className="text-4xl font-bold text-gray-900 dark:text-white">
-                        {plan.price === 0 ? "Gratis" : `Rp ${plan.price.toLocaleString("id-ID")}`}
-                      </span>
-                      {plan.price > 0 && plan.period != "Tahunan" && (
-                        <span className="ml-2 text-gray-500 dark:text-gray-400">/bulan</span>
+                    <div className="flex flex-col items-start">
+                      {/* Original Price (Strikethrough) */}
+                      {plan.originalPrice > 0 && plan.originalPrice > plan.price && (
+                        <span className="text-2xl text-gray-400 dark:text-gray-500 line-through mb-1">
+                          Rp {plan.originalPrice.toLocaleString("id-ID")}
+                        </span>
                       )}
-                      {plan.period == "Tahunan" && (
-                        <span className="ml-2 text-gray-500 dark:text-gray-400">/tahun</span>
+                      
+                      {/* Sale Price */}
+                      <div className="flex items-baseline">
+                        <span className="text-4xl font-bold text-gray-900 dark:text-white">
+                          {plan.price === 0 ? "Gratis" : `Rp ${plan.price.toLocaleString("id-ID")}`}
+                        </span>
+                        {plan.price > 0 && plan.period != "Tahunan" && (
+                          <span className="ml-2 text-gray-500 dark:text-gray-400">/bulan</span>
+                        )}
+                        {plan.period == "Tahunan" && (
+                          <span className="ml-2 text-gray-500 dark:text-gray-400">/tahun</span>
+                        )}
+                      </div>
+                      
+                      {/* Savings Info */}
+                      {plan.originalPrice > 0 && plan.originalPrice > plan.price && (
+                        <div className="mt-2">
+                          <span className="text-green-600 dark:text-green-400 font-semibold text-sm">
+                            Hemat Rp {(plan.originalPrice - plan.price).toLocaleString("id-ID")}
+                          </span>
+                          <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
+                            ({Math.round(((plan.originalPrice - plan.price) / plan.originalPrice) * 100)}% OFF)
+                          </span>
+                        </div>
                       )}
                     </div>
-                    {plan.price > 0 && (
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                        Hemat 30% dengan paket tahunan
-                      </p>
-                    )}
                   </div>
 
                   {/* Features */}
@@ -193,9 +213,7 @@ export default function Pricing() {
                   </div>
 
                   {/* CTA Button */}
-                  <Link
-                  href={plan.url}
-                  >
+                  <Link href={plan.url}>
                     <Button
                       variant={plan.ctaVariant as any}
                       className={`w-full cursor-pointer ${
@@ -204,7 +222,7 @@ export default function Pricing() {
                           : plan.ctaVariant === "outline"
                           ? "border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20"
                           : "bg-indigo-600 hover:bg-indigo-700 text-white"
-                      } py-3 rounded-lg font-semibold text-lg transition-all duration-300 cursor`}
+                      } py-3 rounded-lg font-semibold text-lg transition-all duration-300`}
                     >
                       {plan.cta}
                     </Button>
@@ -227,163 +245,163 @@ export default function Pricing() {
           </div>
 
           <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-800">
-                <thead className="bg-gray-50 dark:bg-gray-900">
-                  <tr>
-                    <th className="px-6 py-5 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">
-                      Fitur
-                    </th>
-                    <th className="px-6 py-5 text-center text-sm font-semibold text-gray-700 dark:text-gray-300">
-                      Free
-                    </th>
-                    <th className="px-6 py-5 text-center text-sm font-semibold text-gray-700 dark:text-gray-300">
-                      Pro
-                    </th>
-                    <th className="px-6 py-5 text-center text-sm font-semibold text-gray-700 dark:text-gray-300">
-                      Premium
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
-                  <tr>
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <Zap className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Jumlah Prompt
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      10
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      100+
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Unlimited
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 dark:bg-gray-950">
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <TrendingUp className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Kategori
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      Dasar
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Semua
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Semua + Eksklusif
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <ArrowRight className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Update
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      Mingguan
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Harian
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Real-time
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 dark:bg-gray-950">
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Komunitas
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      Dasar
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Eksklusif
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      VIP
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Support
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      Email
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Prioritas
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      24/7
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 dark:bg-gray-950">
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <ArrowRight className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Download
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      Terbatas
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Unlimited
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Unlimited
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Request Custom
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      ✗
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      ✓
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      ✓ Prioritas
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 dark:bg-gray-950">
-                    <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
-                      <div className="flex items-center gap-2">
-                        <Crown className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        Fitur Eksklusif
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      ✗
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
-                      Early Access
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
-                      Beta + Konsultasi
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-800">
+              <thead className="bg-gray-50 dark:bg-gray-900">
+                <tr>
+                  <th className="px-6 py-5 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    Fitur
+                  </th>
+                  <th className="px-6 py-5 text-center text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    Free
+                  </th>
+                  <th className="px-6 py-5 text-center text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    Pro
+                  </th>
+                  <th className="px-6 py-5 text-center text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    Premium
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
+                <tr>
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <Zap className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Jumlah Prompt
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    -
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    100+
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Unlimited
+                  </td>
+                </tr>
+                <tr className="bg-gray-50 dark:bg-gray-950">
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Kategori
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    Dasar
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Semua
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Semua + Eksklusif
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Update
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    Mingguan
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Harian
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Real-time
+                  </td>
+                </tr>
+                <tr className="bg-gray-50 dark:bg-gray-950">
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <Users className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Komunitas
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    Dasar
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Eksklusif
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    VIP
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <Shield className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Support
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    Email
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Prioritas
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    24/7
+                  </td>
+                </tr>
+                <tr className="bg-gray-50 dark:bg-gray-950">
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Download
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    Terbatas
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Unlimited
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Unlimited
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Request Custom
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    ✗
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    ✓
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    ✓ Prioritas
+                  </td>
+                </tr>
+                <tr className="bg-gray-50 dark:bg-gray-950">
+                  <td className="px-6 py-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="flex items-center gap-2">
+                      <Crown className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      Fitur Eksklusif
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    ✗
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300">
+                    Early Access
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    Beta + Konsultasi
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>

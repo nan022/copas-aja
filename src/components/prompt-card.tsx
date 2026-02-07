@@ -13,7 +13,6 @@ interface PromptCardProps {
 
 export default function PromptCard({ 
   title, 
-  name,
   content, 
   iconType,
   onCopy 
@@ -32,10 +31,6 @@ export default function PromptCard({
     }
   };
 
-  // Tentukan apakah konten adalah URL gambar (hanya untuk hasil kreatif)
-  const isImageResult = iconType === 'result' && name === 'Kreatif' && 
-                       (content.startsWith('http') || content.startsWith('/'));
-
   return (
     <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm">
       <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
@@ -53,9 +48,9 @@ export default function PromptCard({
               </svg>
             </div>
           )}
-          <h2 className="font-bold text-lg text-gray-900 dark:text-white">
-            {title}
-          </h2>
+          <span className="font-bold text-md text-gray-900 dark:text-white">
+            Prompt
+          </span>
         </div>
         <button 
           onClick={handleCopy}
@@ -82,24 +77,13 @@ export default function PromptCard({
           ? 'bg-gray-50 dark:bg-gray-900/50 font-sans' 
           : 'bg-blue-50 dark:bg-blue-900/20'
       }`}>
-        {isImageResult ? (
-          // Hanya tampilkan gambar untuk hasil kreatif
-          <img 
-            src={content} 
-            alt={`Hasil ${name.toLowerCase()}`} 
-            className="w-full h-auto max-h-125 object-contain rounded-lg"
-            loading="lazy"
-          />
-        ) : (
-          // Tampilkan teks untuk prompt atau hasil non-gambar
           <p className={`whitespace-pre-line ${
-            iconType === 'prompt' 
-              ? 'text-gray-800 dark:text-gray-200 font-sans' 
-              : 'text-gray-700 dark:text-gray-300 font-mono text-sm'
-          }`}>
-            {content}
+              iconType === 'prompt' 
+                ? 'text-gray-800 dark:text-gray-200 font-sans' 
+                : 'text-gray-700 dark:text-gray-300 font-mono text-sm'
+            }`}>
+              {content}
           </p>
-        )}
       </div>
     </div>
   );

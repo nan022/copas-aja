@@ -20,7 +20,6 @@ export default function Header() {
   const navigation = [
     { name: "Beranda", href: "/" },
     { name: "Kategori", href: "/kategori" },
-    { name: "Jelajahi", href: "/jelajahi" },
     { name: "Panduan", href: "/panduan" },
     { name: "Blog", href: "/blog" },
   ];
@@ -31,6 +30,7 @@ export default function Header() {
     { name: "Kreatif", href: "/kategori/kreatif" },
     { name: "Edukasi", href: "/kategori/edukasi" },
     { name: "Teknis", href: "/kategori/teknis" },
+    { name: "Lainnya", href: "/kategori" },
   ];
 
   return (

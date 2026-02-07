@@ -33,7 +33,7 @@ export default function KategoriPage() {
             <div className="text-center max-w-3xl mx-auto">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-sm font-medium mb-6">
                     <Sparkles className="w-4 h-4 mr-2" />
-                    Hasil Prompt
+                    Kategori Prompt
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                     Semua Kategori <span className='text-indigo-600 dark:text-indigo-400'>Prompt</span>
